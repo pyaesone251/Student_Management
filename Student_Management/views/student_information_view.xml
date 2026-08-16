@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_student_information_inherit" model="ir.ui.view">
+        <field name="name">student.information.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="is_student"/>
+                <field name="student_code" />
+                <field name="enrollment_date" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

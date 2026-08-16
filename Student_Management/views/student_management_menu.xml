@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="student_management_root" name="Student Management" sequence="1"/>
+
+    <menuitem id="school_student_menu" parent="student_management_root" name="Students" sequence="1" action="action_student_view" />
+
+    <menuitem id="school_class_menu" parent="student_management_root" name="Class" sequence="2" action="action_school_class_view" />
+
+    <menuitem id="school_subject_menu" parent="student_management_root" name="Subjects" sequence="3" action="action_school_subject_view" />
+
+    <menuitem id="school_teacher_menu" parent="student_management_root" name="Teachers" sequence="4" action="action_school_teacher_view" />
+</odoo>

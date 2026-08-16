@@ -1,0 +1,21 @@
+{
+    'name':'Student_Management',
+    'version':'19.0.1.0.0',
+    'license': 'LGPL-3',
+    'summary': 'Student Management System',
+    'installable':True,
+    'auto_install':False,
+    'application':True,
+    'sequence':1,
+    'depends':['contacts'],
+    'data':[
+        'security/school_security.xml',
+        'security/ir.model.access.csv',
+        'views/school_student_view.xml',
+        'views/student_information_view.xml',
+        'views/school_class_view.xml',
+        'views/school_subject_view.xml',
+        'views/school_teacher_view.xml',
+        'views/student_management_menu.xml',
+    ],
+}
