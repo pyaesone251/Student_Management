@@ -6,6 +6,7 @@ class SchoolSubject(models.Model):
 
     name = fields.Char('Subject Name')
     code = fields.Char('Subject Code')
+    teacher_id = fields.Many2one('school.teacher',string='Teachers')
     description = fields.Text('Description')
 
     

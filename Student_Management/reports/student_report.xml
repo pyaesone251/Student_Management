@@ -29,26 +29,136 @@
                 <!-- Body -->
                 <div class="article" t-att-data-oe-model="o._name" t-att-data-oe-id="o.id" t-att-data-oe-lang="o.env.context.get('lang')">
                     <div class="page">
-                        <div style="border: 1.5px solid #2B4C7E; border-radius: 4px; padding: 15px 25px;">
-                            <table style="width: 100%; border: 1.5px solid #2B4C7E !important; border-collapse: collapse; font-size: 14px;">
-                                <tr style="height: 36px;">
-                                    <td style="width: 25%; font-weight: bold; vertical-align: middle; border: none !important; padding: 6px 0 6px 25px;">Student Name</td>
-                                    <td style="width: 3%; text-align: center; font-weight: bold; vertical-align: middle; border: none !important; padding: 6px 0;">:</td>
-                                    <td style="width: 72%; vertical-align: middle; border: none !important; padding: 6px 20px 6px 10px;">
-                                        <span t-field="o.student_name"/>
-                                    </td>
+                        <table style="width: 100%; border: 1.5px solid #333; border-collapse: collapse;">
+                            <tr style="height: 36px;">
+                                <td style="width: 25%; font-weight: bold; vertical-align: middle; padding: 6px 0 6px 25px;">
+                                Student Name
+                                </td>
+                                <td style="width: 3%; text-align: center; font-weight: bold; vertical-align: middle; padding: 6px 0;">
+                                :
+                                </td>
+                                <td style="width: 72%; vertical-align: middle; padding: 6px 20px 6px 10px;">
+                                    <span t-field="o.student_name"/>
+                                </td>
+                            </tr>
+
+                            <tr style="height: 36px;">
+                                <td style="font-weight: bold; vertical-align: middle; padding: 6px 0 6px 25px;">
+                                Student ID
+                                </td>
+                                <td style="text-align: center; font-weight: bold; vertical-align: middle; padding: 6px 0;">
+                                :
+                                </td>
+                                <td style="vertical-align: middle; padding: 6px 20px 6px 10px;">
+                                    <span t-field="o.student_id"/>
+                                </td>
+                            </tr>
+
+                            <tr style="height: 36px;">
+                                <td style="font-weight: bold; vertical-align: middle; padding: 6px 0 6px 25px;">
+                                Gender
+                                </td>
+                                <td style="text-align: center; font-weight: bold; vertical-align: middle; padding: 6px 0;">
+                                :
+                                </td>
+                                <td style="vertical-align: middle; padding: 6px 20px 6px 10px;">
+                                    <span t-field="o.gender"/>
+                                </td>
+                            </tr>
+
+                            <tr style="height: 36px;">
+                                <td style="font-weight: bold; vertical-align: middle; padding: 6px 0 6px 25px;">
+                                Date of Birth
+                                </td>
+                                <td style="text-align: center; font-weight: bold; vertical-align: middle; padding: 6px 0;">
+                                :
+                                </td>
+                                <td style="vertical-align: middle; padding: 6px 20px 6px 10px;">
+                                    <span t-field="o.date_of_birth"/>
+                                </td>
+                            </tr>
+
+                            <tr style="height: 36px;">
+                                <td style="font-weight: bold; vertical-align: middle; padding: 6px 0 6px 25px;">
+                                Class
+                                </td>
+                                <td style="text-align: center; font-weight: bold; vertical-align: middle; padding: 6px 0;">
+                                :
+                                </td>
+                                <td style="vertical-align: middle; padding: 6px 20px 6px 10px;">
+                                    <span t-field="o.class_id"/>
+                                </td>
+                            </tr>
+
+                            <tr style="height: 36px;">
+                                <td style="font-weight: bold; vertical-align: middle; padding: 6px 0 6px 25px;">
+                                Academic Year
+                                </td>
+                                <td style="text-align: center; font-weight: bold; vertical-align: middle; padding: 6px 0;">
+                                :
+                                </td>
+                                <td style="vertical-align: middle; padding: 6px 20px 6px 10px;">
+                                    <span t-field="o.class_id.academic_year"/>
+                                </td>
+                            </tr>
+
+                            <!-- <tr style="height: 36px;">
+                                <td style="font-weight: bold; vertical-align: middle; padding: 6px 0 6px 25px;">
+            Date of Issue
+                                </td>
+                                <td style="text-align: center; font-weight: bold; vertical-align: middle; padding: 6px 0;">
+            :
+                                </td>
+                                <td style="vertical-align: middle; padding: 6px 20px 6px 10px;">
+                                    <span t-field="o.date_of_issue"/>
+                                </td>
+                            </tr> -->
+                        </table>
+
+                        <h3 style="text-align: center; margin-top: 20px;">SUBJECTS </h3>
+
+                        <table style="width: 100%; border: 1px solid #777; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background-color: #d9e2f3;">
+                                    <th style="width: 10%; border: 1px solid #777; padding: 7px; text-align: center;">No.</th>
+                                    <th style="width: 20%; border: 1px solid #777; padding: 7px; text-align: center;">Subject Code</th>
+                                    <th style="width: 38%; border: 1px solid #777; padding: 7px; text-align: center;"> Subject Name</th>
+                                    <th style="width: 32%; border: 1px solid #777; padding: 7px; text-align: center;">Teacher</th>
                                 </tr>
-                                <tr style="height: 36px;">
-                                    <td style="font-weight: bold; vertical-align: middle; border: none !important; padding: 6px 0 6px 25px;">Student ID</td>
-                                    <td style="text-align: center; font-weight: bold; vertical-align: middle; border: none !important; padding: 6px 0;">:</td>
-                                    <td style="vertical-align: middle; border: none !important; padding: 6px 20px 6px 10px;">
-                                        <span t-field="o.student_id"/>
+                            </thead>
+
+                            <tbody>
+                                <t t-set="number" t-value="1"/>
+                                <tr t-foreach="o.subject_ids" t-as="line">
+                                    <td style="border: 1px solid #777; padding: 7px; text-align: center;">
+                                        <span t-esc="number"/>
                                     </td>
+
+                                    <td style="border: 1px solid #777; padding: 7px; text-align: center;">
+                                        <span t-field="line.code"/>
+                                    </td>
+
+                                    <td style="border: 1px solid #777; padding: 7px; text-align: center;">
+                                        <span t-field="line.name"/>
+                                    </td>
+
+                                    <td style="border: 1px solid #777; padding: 7px; text-align: center;">
+                                        <span t-field="line.teacher_id.name"/>
+                                    </td>
+                                    <t t-set="number" t-value="number+1"/>
                                 </tr>
-                            </table>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+
+
+                <!-- Footer -->
+                <!-- <div class="footer">
+                    <div class="d-flex align-items-center border-top pt-2">
+                        <span>Page <span class="page"/> / <span class="topage" /> </span>
+                    </div>
+                </div> -->
             </t>
         </t>
     </template>
