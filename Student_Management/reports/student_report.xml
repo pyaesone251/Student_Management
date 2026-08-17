@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_report_student" model="ir.actions.report">
+        <field name="name">Student Report</field>
+        <field name="model">school.student</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">Student_Management.report_student_document</field>
+        <field name="report_file">Student_Management.report_student_document</field>
+        <field name="print_report_name">'Student Report -%s' % (object.student_name)</field>
+        <field name="binding_model_id" ref="model_school_student" />
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_student_document">
+        <t t-call="web.html_container">
+            <t t-set="company" t-value="res_company" />
+            <t t-foreach="docs" t-as="o">
+                <!-- Header -->
+                <div class="header">
+                    <div class="text-center border-bottom pb-2">
+                        <!-- <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;" alt="Logo"/> -->
+                        <h3 class="text-center fw-bold" t-esc="company.name" />
+                    </div>
+                    <div class="text-center mt-2">
+                        <h5 class="text-center fw-bold">STUDENT ID CARD</h5>
+                    </div>
+                </div>
+
+                <!-- Body -->
+                <div class="article" t-att-data-oe-model="o._name" t-att-data-oe-id="o.id" t-att-data-oe-lang="o.env.context.get('lang')">
+                    <div class="page">
+                        <div style="border: 1.5px solid #2B4C7E; border-radius: 4px; padding: 15px 25px;">
+                            <table style="width: 100%; border: 1.5px solid #2B4C7E !important; border-collapse: collapse; font-size: 14px;">
+                                <tr style="height: 36px;">
+                                    <td style="width: 25%; font-weight: bold; vertical-align: middle; border: none !important; padding: 6px 0 6px 25px;">Student Name</td>
+                                    <td style="width: 3%; text-align: center; font-weight: bold; vertical-align: middle; border: none !important; padding: 6px 0;">:</td>
+                                    <td style="width: 72%; vertical-align: middle; border: none !important; padding: 6px 20px 6px 10px;">
+                                        <span t-field="o.student_name"/>
+                                    </td>
+                                </tr>
+                                <tr style="height: 36px;">
+                                    <td style="font-weight: bold; vertical-align: middle; border: none !important; padding: 6px 0 6px 25px;">Student ID</td>
+                                    <td style="text-align: center; font-weight: bold; vertical-align: middle; border: none !important; padding: 6px 0;">:</td>
+                                    <td style="vertical-align: middle; border: none !important; padding: 6px 20px 6px 10px;">
+                                        <span t-field="o.student_id"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

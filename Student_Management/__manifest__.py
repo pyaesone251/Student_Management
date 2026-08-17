@@ -7,7 +7,7 @@
     'auto_install':False,
     'application':True,
     'sequence':1,
-    'depends':['contacts'],
+    'depends':['base','contacts'],
     'data':[
         'security/school_security.xml',
         'security/ir.model.access.csv',
@@ -17,5 +17,6 @@
         'views/school_subject_view.xml',
         'views/school_teacher_view.xml',
         'views/student_management_menu.xml',
+        'reports/student_report.xml',
     ],
 }
