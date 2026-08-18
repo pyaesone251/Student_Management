@@ -19,5 +19,6 @@
         'views/student_management_menu.xml',
         'reports/student_report.xml',
         'data/ir_sequence.xml',
+        'wizard/student_report_wizard_view.xml',
     ],
 }
