@@ -29,91 +29,93 @@
                 <!-- Body -->
                 <div class="article" t-att-data-oe-model="o._name" t-att-data-oe-id="o.id" t-att-data-oe-lang="o.env.context.get('lang')">
                     <div class="page">
-                        <table style="width: 100%; border: 1.5px solid #333; border-collapse: collapse;">
+                        <style>
+                            .student-info-table, .student-info-table tr, .student-info-table td {
+                                border: none !important;
+                                border-collapse: collapse !important;
+                            }
+                        </style>
+                        <div style="border: 1.5px solid #333;">
+                        <table class="student-info-table" style="width: 100%; border-spacing: 0;">
                             <tr style="height: 36px;">
                                 <td style="width: 25%; font-weight: bold; vertical-align: middle; padding: 6px 0 6px 25px;">
-                                Student Name
+                                    Student Name
                                 </td>
                                 <td style="width: 3%; text-align: center; font-weight: bold; vertical-align: middle; padding: 6px 0;">
-                                :
+                                    :
                                 </td>
                                 <td style="width: 72%; vertical-align: middle; padding: 6px 20px 6px 10px;">
                                     <span t-field="o.student_name"/>
                                 </td>
                             </tr>
-
                             <tr style="height: 36px;">
                                 <td style="font-weight: bold; vertical-align: middle; padding: 6px 0 6px 25px;">
-                                Student ID
+                                    Student ID
                                 </td>
                                 <td style="text-align: center; font-weight: bold; vertical-align: middle; padding: 6px 0;">
-                                :
+                                    :
                                 </td>
                                 <td style="vertical-align: middle; padding: 6px 20px 6px 10px;">
-                                    <span t-field="o.student_id"/>
+                                    <span t-field="o.sequence"/>
                                 </td>
                             </tr>
-
                             <tr style="height: 36px;">
                                 <td style="font-weight: bold; vertical-align: middle; padding: 6px 0 6px 25px;">
-                                Gender
+                                    Gender
                                 </td>
                                 <td style="text-align: center; font-weight: bold; vertical-align: middle; padding: 6px 0;">
-                                :
+                                    :
                                 </td>
                                 <td style="vertical-align: middle; padding: 6px 20px 6px 10px;">
                                     <span t-field="o.gender"/>
                                 </td>
                             </tr>
-
                             <tr style="height: 36px;">
                                 <td style="font-weight: bold; vertical-align: middle; padding: 6px 0 6px 25px;">
-                                Date of Birth
+                                    Date of Birth
                                 </td>
                                 <td style="text-align: center; font-weight: bold; vertical-align: middle; padding: 6px 0;">
-                                :
+                                    :
                                 </td>
                                 <td style="vertical-align: middle; padding: 6px 20px 6px 10px;">
                                     <span t-field="o.date_of_birth"/>
                                 </td>
                             </tr>
-
                             <tr style="height: 36px;">
                                 <td style="font-weight: bold; vertical-align: middle; padding: 6px 0 6px 25px;">
-                                Class
+                                    Class
                                 </td>
                                 <td style="text-align: center; font-weight: bold; vertical-align: middle; padding: 6px 0;">
-                                :
+                                    :
                                 </td>
                                 <td style="vertical-align: middle; padding: 6px 20px 6px 10px;">
                                     <span t-field="o.class_id"/>
                                 </td>
                             </tr>
-
                             <tr style="height: 36px;">
                                 <td style="font-weight: bold; vertical-align: middle; padding: 6px 0 6px 25px;">
-                                Academic Year
+                                    Academic Year
                                 </td>
                                 <td style="text-align: center; font-weight: bold; vertical-align: middle; padding: 6px 0;">
-                                :
+                                    :
                                 </td>
                                 <td style="vertical-align: middle; padding: 6px 20px 6px 10px;">
                                     <span t-field="o.class_id.academic_year"/>
                                 </td>
                             </tr>
-
-                            <!-- <tr style="height: 36px;">
+                            <tr style="height: 36px;">
                                 <td style="font-weight: bold; vertical-align: middle; padding: 6px 0 6px 25px;">
-            Date of Issue
+                                    Date of Issue
                                 </td>
                                 <td style="text-align: center; font-weight: bold; vertical-align: middle; padding: 6px 0;">
-            :
+                                    :
                                 </td>
                                 <td style="vertical-align: middle; padding: 6px 20px 6px 10px;">
-                                    <span t-field="o.date_of_issue"/>
+                                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d %b %Y')"/>
                                 </td>
-                            </tr> -->
+                            </tr>
                         </table>
+                        </div>
 
                         <h3 style="text-align: center; margin-top: 20px;">SUBJECTS </h3>
 

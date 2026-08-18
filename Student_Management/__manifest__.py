@@ -18,5 +18,6 @@
         'views/school_teacher_view.xml',
         'views/student_management_menu.xml',
         'reports/student_report.xml',
+        'data/ir_sequence.xml',
     ],
 }

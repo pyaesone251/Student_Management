@@ -13,7 +13,7 @@
                     </div>
                     <group>
                         <group>
-                            <field name="student_id"/>
+                            <field name="sequence"/>
                             <field name="gender" />
                             <field name="date_of_birth" />
                             <field name="class_id" />
@@ -37,7 +37,7 @@
         <field name="arch" type="xml">
             <list>
                 <field name="student_name"/>
-                <field name="student_id"/>
+                <field name="sequence"/>
                 <field name="gender" />
                 <field name="date_of_birth" />
                 <field name="phone_number"/>

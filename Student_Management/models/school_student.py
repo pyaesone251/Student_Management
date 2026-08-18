@@ -5,7 +5,7 @@ class SchoolStudent(models.Model):
     _description = 'School Student'
 
     student_name = fields.Char('Student Name')
-    student_id = fields.Char('Student ID')
+    sequence = fields.Char('sequence')
     gender = fields.Selection([
         ('male','Male'),
         ('female','Female'),
@@ -19,3 +19,11 @@ class SchoolStudent(models.Model):
     # Relation
     class_id = fields.Many2one('school.class',string='Class')
     subject_ids = fields.Many2many('school.subject',string='Subjects')
+
+    @api.model_create_multi
+    def create(self,val_list):
+        for vals in val_list:
+            vals['sequence'] = self.env['ir.sequence'].next_by_code('student.code')
+            res = super().create(val_list)
+        return res
+        
