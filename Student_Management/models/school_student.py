@@ -15,6 +15,7 @@ class SchoolStudent(models.Model):
     email_address = fields.Char('Email Address')
     address = fields.Text('Address')
     active = fields.Boolean('Active',default=True)
+    date = fields.Date('Join Date')
 
     # Relation
     class_id = fields.Many2one('school.class',string='Class')
